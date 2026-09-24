@@ -9,9 +9,9 @@ This package is meant to provide a relatively easy way to generate Monte Carlo d
 >
 > ### Added files
 >
-> - `config_hgtdATLAS_PUcard.py`: HEPData4ML configuration for Delphes-based
+> - `config/config_hgtdATLAS_PUcard.py`: HEPData4ML configuration for Delphes-based
 >   generation, reconstruction and post-processing.
-> - `Top_Wqq_ATLAS.txt`: Pythia8 process card for \(t\bar{t}\) production with
+> - `util/pythia/pythia_templates/Top_Wqq_ATLAS.txt`: Pythia8 process card for \(t\bar{t}\) production with
 >   ATLAS-like beam-spot parameters.
 > - `util/delphes/cards/delphes_card_HGTD_ATLAS.tcl`: Delphes detector card
 >   including the HGTD configuration.
