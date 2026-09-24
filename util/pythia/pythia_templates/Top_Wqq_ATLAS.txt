@@ -1,0 +1,22 @@
+! ─────────────────────────────────────────────────────────────────────────────
+!  Top_Wqq_ATLAS.txt  —  semileptonic tt-bar with conditions as ATLAS Run 3, good also for Hi-Lumi
+! ─────────────────────────────────────────────────────────────────────────────
+ 
+! Processo: tt-bar con W→qq (semileptonico)
+Top:gg2ttbar   = on
+Top:qqbar2ttbar = on
+ 
+! Tune ATLAS-like (Monash 2013)
+Tune:pp = 21
+ 
+! Beamspot ATLAS Run 3 (valori nominali)
+Beams:allowVertexSpread = on
+Beams:sigmaVertexX = 0.015    ! [mm]  σ_x ≈ 15 µm
+Beams:sigmaVertexY = 0.015    ! [mm]  σ_y ≈ 15 µm
+Beams:sigmaVertexZ = 46.0     ! [mm]  σ_z ≈ 40 mm
+PhaseSpace:pTHatMin = 20.
+ 
+! Collisore
+Beams:idA = 2212
+Beams:idB = 2212
+Beams:eCM = 14000.    ! Hi-Lumi: 14.0 TeV
