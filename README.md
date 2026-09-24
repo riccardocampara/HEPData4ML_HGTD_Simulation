@@ -31,6 +31,40 @@ This package is meant to provide a relatively easy way to generate Monte Carlo d
 > - Jets are reconstructed with anti- $(k_t)$, (R=0.4), from
 >   `ParticleFlowCandidate` and `Track` collections. Ghost association to
 >   final-state $(b\bar{b})$-quark descendants is used for flavour labels.
+>
+> ## Usage
+>
+>This is the way to simulate the files: run the full chain (generation → pile-up → Delphes simulation →
+>reconstruction) from the framework root with `run.py`:
+
+>```bash
+>python run.py -n 500 \
+>  -o ATLAS_pu200_hard47 \
+>  -O output/ATLAS_pu200_hard47 \
+>  --config config/config_hgtdATLAS_PUcard.py \
+>  --steps "generation,pileup,simulation,reconstruction" \
+>  -del_delphes 0 \
+>  -sp 0
+>```
+>
+>| Option | Meaning |
+>|--------|---------|
+>| `-n 500` | Number of events to generate (per p̂_T bin, if bins are given with `-p`) |
+>| `-o ATLAS_pu200_hard47` | Name of the output HDF5 file |
+>| `-O output/ATLAS_pu200_hard47` | Output directory |
+>| `--config` | Configuration file in this repository |
+>| `--steps` | Chain steps to run: generation (Pythia8 → HepMC3), pileup, simulation (Delphes), reconstruction (HDF5 conversion + jet >clustering) |
+>| `-del_delphes 0` | Do **not** delete the Delphes ROOT files |
+>| `-sp 0` | Do **not** split the output into train / validation / test files |
+>
+>Notes:
+>- Pile-up (⟨μ⟩ = 200) is merged by the Delphes card (`PileUpMerger`), since `pileup['handler']` is `None` in the config.
+>  The `pileup` step is kept in `--steps` to follow the standard framework chain.
+>- Random seeds are set in the config (`'rng': 47`, `'delphes_rng_seed': 47`). The `-rng` option of `run.py`
+>  overrides the Pythia8 seed; change the seeds to produce independent samples.
+>- The output name `ATLAS_pu200_hard47` encodes the setup: pile-up 200, hard-scatter seed 47.
+>- Dataset contents can be inspected with `python util/tools/check_file.py <file.h5>` (framework tool).
+>- For large productions, the framework provides HTCondor scripts (`prep_condor.py`, `run_condor.py`).
 
 
 ## Overview
