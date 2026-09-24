@@ -5,7 +5,7 @@ This package is meant to provide a relatively easy way to generate Monte Carlo d
 > ## HGTD / ATLAS simulation additions
 >
 > This fork adds an ATLAS-like HGTD Delphes simulation setup for semileptonic
-> ($t\bar{t}$) events at \(\sqrt{s}=14\) TeV.
+> ($t\bar{t}$) events at $(\sqrt{s}=14)$ TeV.
 >
 > ### Added files
 >
@@ -18,20 +18,19 @@ This package is meant to provide a relatively easy way to generate Monte Carlo d
 >
 > ### Main configuration
 >
-> - Hard process: \(pp \rightarrow t\bar{t}\), with
+> - Hard process: $(pp \rightarrow t\bar{t})$, with
 >   `Top:gg2ttbar = on` and `Top:qqbar2ttbar = on`.
-> - Centre-of-mass energy: \(\sqrt{s}=14\) TeV.
-> - Pythia8 tune: `Tune:pp = 21` (Monash 2013).
-> - Beam spot: \(\sigma_x=\sigma_y=15~\mu\mathrm{m}\),
->   \(\sigma_z=46~\mathrm{mm}\).
+> - Centre-of-mass energy: $(\sqrt{s}=14)$ TeV.
+> - Beam spot: $(\sigma_x=\sigma_y=15~\mu\mathrm{m}\),
+>   \(\sigma_z=46~\mathrm{mm})$.
 > - Delphes card: `util/delphes/cards/delphes_card_HGTD_ATLAS.tcl`.
 > - Random seeds: `rng = 47` and `delphes_rng_seed = 47`.
 > - Output collections include timing-aware `Track`,
 >   `ParticleFlowCandidate`, `Jet`, `GenJet`, `GenVertex`, and
 >   `PileUpVertices`.
-> - Jets are reconstructed with anti-\(k_t\), \(R=0.4\), from
+> - Jets are reconstructed with anti-$(k_t)$, (R=0.4), from
 >   `ParticleFlowCandidate` and `Track` collections. Ghost association to
->   final-state \(b/\bar{b}\)-quark descendants is used for flavour labels.
+>   final-state $(b\bar{b})$-quark descendants is used for flavour labels.
 
 
 ## Overview
