@@ -5,7 +5,7 @@ This package is meant to provide a relatively easy way to generate Monte Carlo d
 > ## HGTD / ATLAS simulation additions
 >
 > This fork adds an ATLAS-like HGTD Delphes simulation setup for semileptonic
-> \(t\bar{t}\) events at \(\sqrt{s}=14\) TeV.
+> ($t\bar{t}$) events at \(\sqrt{s}=14\) TeV.
 >
 > ### Added files
 >
