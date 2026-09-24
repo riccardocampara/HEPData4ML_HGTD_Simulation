@@ -2,6 +2,38 @@
 
 This package is meant to provide a relatively easy way to generate Monte Carlo datasets for high-energy physics (HEP) studies, such as (but not limited to) development of machine learning methods.
 
+> ## HGTD / ATLAS simulation additions
+>
+> This fork adds an ATLAS-like HGTD Delphes simulation setup for semileptonic
+> \(t\bar{t}\) events at \(\sqrt{s}=14\) TeV.
+>
+> ### Added files
+>
+> - `config_hgtdATLAS_PUcard.py`: HEPData4ML configuration for Delphes-based
+>   generation, reconstruction and post-processing.
+> - `Top_Wqq_ATLAS.txt`: Pythia8 process card for \(t\bar{t}\) production with
+>   ATLAS-like beam-spot parameters.
+> - `util/delphes/cards/delphes_card_HGTD_ATLAS.tcl`: Delphes detector card
+>   including the HGTD configuration.
+>
+> ### Main configuration
+>
+> - Hard process: \(pp \rightarrow t\bar{t}\), with
+>   `Top:gg2ttbar = on` and `Top:qqbar2ttbar = on`.
+> - Centre-of-mass energy: \(\sqrt{s}=14\) TeV.
+> - Pythia8 tune: `Tune:pp = 21` (Monash 2013).
+> - Beam spot: \(\sigma_x=\sigma_y=15~\mu\mathrm{m}\),
+>   \(\sigma_z=46~\mathrm{mm}\).
+> - Delphes card: `util/delphes/cards/delphes_card_HGTD_ATLAS.tcl`.
+> - Random seeds: `rng = 47` and `delphes_rng_seed = 47`.
+> - Output collections include timing-aware `Track`,
+>   `ParticleFlowCandidate`, `Jet`, `GenJet`, `GenVertex`, and
+>   `PileUpVertices`.
+> - Jets are reconstructed with anti-\(k_t\), \(R=0.4\), from
+>   `ParticleFlowCandidate` and `Track` collections. Ghost association to
+>   final-state \(b/\bar{b}\)-quark descendants is used for flavour labels.
+
+
 ## Overview
 
 This software package is designed for generating Monte Carlo simulated datasets of collider physics events.
